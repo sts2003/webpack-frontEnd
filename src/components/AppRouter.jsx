@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
-import Content from "./routers/layouts/content";
+import Content from "../routers/layouts/content";
 
 const AppRouter = () => {
   return (
