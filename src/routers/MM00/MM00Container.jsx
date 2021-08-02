@@ -84,13 +84,10 @@ const MM00Container = ({ history }) => {
   }, [photoPageData]);
 
   useEffect(() => {
+    photoRefetch();
     photoPageRefetch();
     totalPageRefetch();
     totalPageOnlyCntRefetch();
-  }, []);
-
-  useEffect(() => {
-    photoRefetch();
   }, []);
 
   /////////////////// - USE HANDLER - ////////////////////////

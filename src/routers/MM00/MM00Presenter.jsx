@@ -18,6 +18,7 @@ const SearchWrapper2 = styled(Wrapper)`
   color: #fff;
   border-radius: 2px;
   cursor: pointer;
+
   &:hover {
     border: 1px solid rgb(67, 66, 88);
     background: none;
