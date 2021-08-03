@@ -85,6 +85,7 @@ export const Wrapper = styled.div`
   font-weight: ${(props) => props.fontWeight};
   margin: ${(props) => props.margin};
   margin-left: ${(props) => props.marginLeft};
+  margin-top: ${(props) => props.mgTop};
   padding: ${(props) => props.padding};
   overflow: ${(props) => (props.isOverflow ? `auto` : props.overflow || ``)};
   background-image: ${(props) => props.bgImg};

@@ -17,7 +17,11 @@ const MM00Container = ({ history }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [searchValue, setSearchValue] = useState("");
   const [limit, setLimit] = useState(2);
+  const [tab, setTab] = useState(0);
   const inputSearch = useInput("");
+  const [login, setLogin] = useState(
+    sessionStorage.getItem("QW*E*(GSDGVQWVEqQWddQWEQEOk" || "-")
+  );
   ///////////////////// - USE STATE - ////////////////////////
 
   ///////////////////// - USE REF - ////////////////////////
@@ -88,14 +92,27 @@ const MM00Container = ({ history }) => {
     photoPageRefetch();
     totalPageRefetch();
     totalPageOnlyCntRefetch();
+
+    setLogin(sessionStorage.getItem("QW*E*(GSDGVQWVEqQWddQWEQEOk" || "-"));
   }, []);
 
   /////////////////// - USE HANDLER - ////////////////////////
+  const logout = () => {
+    sessionStorage.removeItem("QW*E*(GSDGVQWVEqQWddQWEQEOk");
+    toast.info("성공적으로 처리되었습니다.");
+    window.location.reload();
+    history.push("/");
+  };
+
   const changeFloorHandler = (floor) => {
     setCurrentFloor(floor);
     setDetailKey(null);
     inputSearch.setValue("");
     setSearchValue("");
+  };
+
+  const changeTabHandler = (tab) => {
+    setTab(tab);
   };
 
   const changeSearchValueHandler = () => {
@@ -132,6 +149,7 @@ const MM00Container = ({ history }) => {
   const moveLinkHandler = (link) => {
     history.push(`/${link}`);
   };
+
   return (
     <MM00Presenter
       photoDatum={photoDatum && photoDatum.getAllPhotos}
@@ -144,6 +162,8 @@ const MM00Container = ({ history }) => {
       setSearchValue={setSearchValue}
       pages={pages}
       limit={limit}
+      login={login}
+      logout={logout}
       currentPage={currentPage}
       setCurrentPage={setCurrentPage}
       totalPage={totalPageData && totalPageData.getPhotoTotalPage}

@@ -5,6 +5,7 @@ import MM03Presenter from "./MM03Presenter";
 import { GET_PHOTO_DETAIL } from "../MM02/MM02Queries";
 import { UPDATE_PHOTO } from "./MM03Queries";
 import storageRef from "../../firebase";
+import { useEffect } from "react";
 
 const MM03Container = ({ history, match }) => {
   ///////////////////// - VARIABLE - ////////////////////////
@@ -107,7 +108,12 @@ const MM03Container = ({ history, match }) => {
   const moveLinkHandler = (link) => {
     history.push(`/${link}`);
   };
+
   ///////////////////// - USE EFFECT - ////////////////////////
+  useEffect(() => {
+    photoRefetch();
+  }, []);
+
   return (
     <MM03Presenter
       photoDetailData={photoDetailData && photoDetailData.getPhotoDetail}

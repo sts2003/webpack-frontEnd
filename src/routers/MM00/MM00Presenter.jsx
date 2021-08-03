@@ -67,6 +67,8 @@ const MM00Presenter = ({
   setCurrentPage,
   totalPage,
   totalCnt,
+  login,
+  logout,
   pages,
   currentPage,
   changePageHandler,
@@ -93,10 +95,19 @@ const MM00Presenter = ({
             <FaSearch />
           </SearchWrapper2>
         </SearchWrapper>
-        <CommonBtn onClick={() => moveLinkHandler("create")}>
-          사진 추가하기
-        </CommonBtn>
+
+        {login === null ? (
+          <CommonBtn onClick={() => moveLinkHandler("login")}>로그인</CommonBtn>
+        ) : (
+          <Wrapper dr={`row`} width={`300px`}>
+            <CommonBtn onClick={() => moveLinkHandler("create")}>
+              사진 추가하기
+            </CommonBtn>
+            <CommonBtn onClick={logout}>로그아웃</CommonBtn>
+          </Wrapper>
+        )}
       </Wrapper>
+
       <Wrapper dr={`row`}>
         {photoDatum ? (
           photoDatum.length === 0 ? (

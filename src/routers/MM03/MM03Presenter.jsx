@@ -21,6 +21,7 @@ const MM03Presenter = ({
   return (
     <Wrapper>
       <Wrapper>UPDATE PHOTO</Wrapper>
+
       <Wrapper width={`auto`}>
         <TextInput width={`500px`} type="text" {...modifyName}></TextInput>
         <TextInput
@@ -29,6 +30,7 @@ const MM03Presenter = ({
           {...modifyDescription}
         ></TextInput>
       </Wrapper>
+
       <Wrapper dr={`row`} width={`auto`}>
         <FileInputNone
           width={`350px`}
@@ -43,7 +45,9 @@ const MM03Presenter = ({
         />
         <FileLabel htmlFor="file-js">파일 선택</FileLabel>
       </Wrapper>
+
       <Image width={`500px`} src={modifyImagePath.value} />
+
       <Wrapper dr={`row`}>
         <CommonBtn onClick={modifyPhotoHandler}>수정하기</CommonBtn>
         <CommonBtn onClick={() => moveLinkHandler(``)}>취소하기</CommonBtn>
