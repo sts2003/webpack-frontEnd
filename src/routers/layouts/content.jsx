@@ -6,6 +6,7 @@ import MM02 from "../MM02";
 import MM03 from "../MM03";
 import MM04 from "../MM04";
 import MM05 from "../MM05";
+import MM06 from "../MM06";
 import styled from "styled-components";
 
 const WholeWrapper = styled.div`
@@ -21,6 +22,7 @@ const Content = () => {
       <Route exact path="/update/:id" component={MM03} />
       <Route exact path="/regist" component={MM04} />
       <Route exact path="/login" component={MM05} />
+      <Route exact path="/video" component={MM06} />
     </WholeWrapper>
   );
 };
